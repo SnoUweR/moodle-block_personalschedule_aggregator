@@ -23,7 +23,7 @@
  */
 
 $plugin->component = 'block_personalschedule_aggregator';
-$plugin->version = 2019052700;  //
+$plugin->version = 2019062000;  //
 $plugin->requires = 2017051500; // YYYYMMDDHH (This is the release version for Moodle 3.3+)
 $plugin->dependencies = array(
     'mod_personalschedule' => ANY_VERSION,

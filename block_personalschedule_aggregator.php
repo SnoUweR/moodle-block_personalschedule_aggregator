@@ -68,16 +68,15 @@ class block_personalschedule_aggregator extends block_base
                 $tableCurrentInfo = new html_table();
                 $tableCurrentInfo->head = array(
                     get_string('currentinfo_curtime', 'block_personalschedule_aggregator'),
-                    get_string('currentinfo_period', 'block_personalschedule_aggregator'),
                     get_string('currentinfo_day', 'block_personalschedule_aggregator')
                 );
 
-                $curTime = time();
+                $curTime = mod_personalschedule_proposer::get_user_current_timestamp();
+
                 $periodIdx = mod_personalschedule_proposer::personal_items_get_period_idx($curTime);
                 $dayIdx = mod_personalschedule_proposer::personal_items_get_day_idx($curTime);
                 $tableCurrentInfo->data = array(array(
                     date("G:i", $curTime),
-                    mod_personalschedule_proposer_ui::personalschedule_get_period_localize_from_idx($periodIdx),
                     mod_personalschedule_proposer_ui::personalschedule_get_day_localize_from_idx($dayIdx),
                     ));
 
